@@ -4,17 +4,30 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Template</title>
+		<link rel="stylesheet" href="css/styles.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cabin:wght@500&family=Kufam:wght@500&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
-		<h1>It's a <%= currentDay %></h1>
-		<ul>
+		<div class="box" id="heading"><h1><%= currentDay %></h1></div>
+		<div class="box">
 			<% for( let i = 0; i < newItems.length; i++ ) { %>
-			<li><%= newItems[i] %></li>
+			<div class="item">
+				<input type="checkbox" />
+				<p><%= newItems[i] %></p>
+			</div>
 			<% } %>
-		</ul>
-		<form action="/" method="post">
-			<input type="text" name="newItems" />
-			<button type="submit" name="button">Add</button>
-		</form>
+			<form class="item" action="/" method="post">
+				<input
+					type="text"
+					name="newItems"
+					placeholder="New Item"
+					autocomplete="off"
+				/>
+				<button type="submit" name="button">+</button>
+			</form>
+		</div>
 	</body>
 </html>

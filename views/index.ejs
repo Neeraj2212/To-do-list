@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Template</title>
-		<link rel="stylesheet" href="css/styles.css" />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Cabin:wght@500&family=Kufam:wght@500&display=swap"
-			rel="stylesheet"
-		/>
-	</head>
-	<body>
-		<div class="box" id="heading"><h1><%= currentDay %></h1></div>
+<%- include ('header') %> 
+	
+		<div class="box" id="heading">
+			<h1><%= listTitle %></h1>
+		</div>
 		<div class="box">
 			<% for( let i = 0; i < newItems.length; i++ ) { %>
 			<div class="item">
@@ -26,8 +17,8 @@
 					placeholder="New Item"
 					autocomplete="off"
 				/>
-				<button type="submit" name="button">+</button>
+				<button type="submit" name="list" value=<%=listTitle%>>+</button>
 			</form>
 		</div>
-	</body>
-</html>
+	
+<%- include ('footer') %>  
